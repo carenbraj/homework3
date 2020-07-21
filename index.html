@@ -11,7 +11,33 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <h1 class="title">Password Generator</h1>
+        <h3 class="password-display" id="passwordDisplay">password</h3>
+        <form id="passwordGeneratoForm" class="form">
+            <label for="characterAmountNumber">Number Of Characters</label>
+            <div class="character-amount-container">
+            <input type="range" min="1" max="50" value="10" 
+            id="characterAmountRange">
+            <input class="number-input" type="number" min="1" max="50" value="10" 
+            value="10" id="characterAmountNumber">
+            </div>
+
+            <label for="includeUppercase">Include Uppercase</label>
+            <input type="checkbox" id="includeUppercase">
+
+            <label for="includeNumbers">Include Numbers</label>
+            <input type="checkbox" id="includeNumbers">
+
+            <label for="includeSymols">Include Symbols</label>
+            <input type="checkbox" id="includeSymols">
+
+            <button type="submit" class="btn">Generate Password</button>
+        </form>
+    </div>
+    
+    
+    <!-- <nav class="navbar navbar-dark bg-dark">
         <a class ="navbar-brand" href = "#">Random Password Generator</a>
       </nav>
 
@@ -44,7 +70,7 @@
 
       </div>
 
-    </div>
+    </div> -->
 
 
     
