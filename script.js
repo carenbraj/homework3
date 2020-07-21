@@ -1,18 +1,15 @@
-const characterAmountRange = document.getElementById
-("characterAmountRange")
-const characterAmountNumber = document.getElementById
-("characterAmountNumber")
-const includeUppercaseElement = document.getElementById
-("includeUppercase")
-const includeNumbersElement = document.getElementById ("includeNumbers")
-const includeSymbolsElement = document.getElementById ("includeSymbols")
-const form = document.getElementById("passwordGeneratoForm")
-const passwordDisplay = document.getElementById("passwordDisplay")
+var characterAmountRange = document.getElementById("characterAmountRange")
+var characterAmountNumber = document.getElementById("characterAmountNumber")
+var includeUppercaseElement = document.getElementById("includeUppercase")
+var includeNumbersElement = document.getElementById ("includeNumbers")
+var includeSymbolsElement = document.getElementById ("includeSymbols")
+var form = document.getElementById("passwordGeneratoForm")
+var passwordDisplay = document.getElementById("passwordDisplay")
 
-const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
-const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
-const NNUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
-const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)
+var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
+var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
+var NNUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
+var SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)
 ).concat(arrayFromLowToHigh(91, 96) 
 ).concat(arrayFromLowToHigh(123, 126)
 )
@@ -22,11 +19,11 @@ characterAmountRange.addEventListener("input", syncCharacterAmount)
 
 form.addEventListener("submit", e => {
     e.preventDefault()
-    const characterAmount = characterAmountNumber.value
-    const includeUppercase = includeUppercaseElement.checked
-    const includeNumbers = includeNumbersElement.checked
-    const includeSymbols = includeSymbolsElement.checked
-    const password = generatePassword(characterAmount, includeUppercase,includeNumbers, includeSymbols)
+    var characterAmount = characterAmountNumber.value
+    var includeUppercase = includeUppercaseElement.checked
+    var includeNumbers = includeNumbersElement.checked
+    var includeSymbols = includeSymbolsElement.checked
+    var password = generatePassword(characterAmount, includeUppercase,includeNumbers, includeSymbols)
     passwordDisplay.innerText = password
 })
 
