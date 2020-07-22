@@ -3,12 +3,12 @@ var characterAmountNumber = document.getElementById("characterAmountNumber")
 var includeUppercaseElement = document.getElementById("includeUppercase")
 var includeNumbersElement = document.getElementById ("includeNumbers")
 var includeSymbolsElement = document.getElementById ("includeSymbols")
-var form = document.getElementById("passwordGeneratoForm")
+var form = document.getElementById("passwordGeneratorForm")
 var passwordDisplay = document.getElementById("passwordDisplay")
 
 var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
 var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
-var NNUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
+var NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
 var SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)
 ).concat(arrayFromLowToHigh(91, 96) 
 ).concat(arrayFromLowToHigh(123, 126)
@@ -28,13 +28,16 @@ form.addEventListener("submit", e => {
 })
 
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
-    let charCodes = LOWERCASE_CHAR_CODES
-    if (includeUppercase) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+    var charCodes = LOWERCASE_CHAR_CODES
+    if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
     if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
-    if (includeNumbers) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
-    const passwordCharacters = []
-    for (let i = 0; i < characterAmount; i++) {
-        const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+    
+    var passwordCharacters = []
+    
+
+    for (var i = 0; i < characterAmount; i++) {
+        var characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
         passwordCharacters.push(String.fromCharCode(characterCode)) 
         
     }
@@ -42,8 +45,8 @@ function generatePassword(characterAmount, includeUppercase, includeNumbers, inc
 }
 
 function arrayFromLowToHigh(low, high) {
-    const array = []
-    for (let i = 0; i < array.length; i++) {
+    var array = []
+    for (var i = low; i <= high; i++) {
         array.push(i)      
     }
     return array
@@ -51,7 +54,7 @@ function arrayFromLowToHigh(low, high) {
 
 
 function syncCharacterAmount(e) {
-    const value = e.target.value
+    var value = e.target.value
     characterAmountNumber.value = value
     characterAmountRange.value = value
 }
